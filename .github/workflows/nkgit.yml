@@ -9,7 +9,6 @@ jobs:
     
   changeApproval:
     name: ServiceNow Change Approval
-    needs: build
     runs-on: ubutun-latest
 
     steps:     
