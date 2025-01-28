@@ -1,6 +1,12 @@
 name: nkgit
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - "**"
+  pull_request:
+    types: [opened, reopened]
+    branches:
+      - main
     
 jobs:
 
