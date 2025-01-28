@@ -38,13 +38,14 @@ jobs:
           changeCreationTimeOut: '3600'
           abortOnChangeCreationFailure: true
           abortOnChangeStepTimeout: true
+          deployment-gate: '{"environment":"NKENV","jobName":"Deploy"}'
       - name: Output of Change Creation
         run: echo "change-request-number = ${{ steps.create.outputs.change-request-number }}" >> $GITHUB_OUTPUT
   deploy:
     name: Deploy
     needs: changeApproval
     runs-on: ubuntu-latest
-
+    environment: NKENV
     steps:     
       - name: Run Deployment Script
         run: echo "Deployment Finished....."
