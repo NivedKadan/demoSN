@@ -2,12 +2,7 @@ name: nkgit
 on:
   push:
     branches:
-      - "**"
-  pull_request:
-    types: [opened, reopened]
-    branches:
-      - main
-    
+      - "**"    
 jobs:
 
   build:
